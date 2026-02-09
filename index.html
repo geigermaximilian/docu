@@ -2,45 +2,110 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Meine Doku</title>
+  <title>Java Doku</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Prism Code Highlighting -->
+  <!-- Markdown + Code Highlight -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="app">
+<body class="dark">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h2>📘 Meine Doku</h2>
-
-      <div class="dropdown">
-        <button class="dropbtn">Grundlagen</button>
-        <div class="dropdown-content">
-          <a href="pages/operatoren.html">Operatoren</a>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Main content -->
-    <main class="content">
-      <h1>Willkommen</h1>
-      <div class="card">
-        <p>
-          Diese Seite ist deine persönliche Lern-Dokumentation.
-          Wähle links ein Thema aus.
-        </p>
-      </div>
-    </main>
-
+<header class="topbar">
+  <div class="logo">
+    ☕ Java Doku
+    <span class="author">by Maximilian Geiger</span>
   </div>
 
-  <script src="script.js"></script>
+  <div class="top-actions">
+    <button id="themeToggle">🌙</button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h3>Grundlagen</h3>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/Variablen.md')" data-path="pages/Grundlagen/Variablen.md">
+        <span class="nav-arrow">▶</span>
+        Variablen
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/Datentypen.md')" data-path="pages/Grundlagen/Datentypen.md">
+        <span class="nav-arrow">▶</span>
+        Datentypen
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/Operatoren.md')" data-path="pages/Grundlagen/Operatoren.md">
+        <span class="nav-arrow">▶</span>
+        Operatoren
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/Typecasting.md')" data-path="pages/Grundlagen/Typecasting.md">
+        <span class="nav-arrow">▶</span>
+        Typecasting
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/Strings.md')" data-path="pages/Grundlagen/Strings.md">
+        <span class="nav-arrow">▶</span>
+        Strings
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/Mathematik.md')" data-path="pages/Grundlagen/Mathematik.md">
+        <span class="nav-arrow">▶</span>
+        Mathematik
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/KonsolenEingabe.md')" data-path="pages/Grundlagen/KonsolenEingabe.md">
+        <span class="nav-arrow">▶</span>
+        Konsolen-Eingabe
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/KonsolenAusgabe.md')" data-path="pages/Grundlagen/KonsolenAusgabe.md">
+        <span class="nav-arrow">▶</span>
+        Konsolen-Ausgabe
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" onclick="loadPage('pages/Grundlagen/StatischeMethoden.md')" data-path="pages/Grundlagen/StatischeMethoden.md">
+        <span class="nav-arrow">▶</span>
+        Statische Methoden
+      </a>
+      <div class="nav-subitems"></div>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div id="viewer" class="markdown-body">
+      <h1>Willkommen</h1>
+      <p>Wähle links ein Thema aus.</p>
+    </div>
+  </main>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
