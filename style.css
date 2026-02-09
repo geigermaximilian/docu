@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #0f1117;
+  color: #e6edf3;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #161b22;
+  padding: 20px;
+  border-right: 1px solid #30363d;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+/* Dropdown */
+.dropbtn {
+  background: none;
+  border: none;
+  color: #e6edf3;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  background: #21262d;
+  border-radius: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  padding-left: 10px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #8b949e;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #21262d;
+  color: white;
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* Cards */
+.card {
+  background: rgba(22, 27, 34, 0.8);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #30363d;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
